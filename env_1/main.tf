@@ -8,13 +8,13 @@ terraform {
 }
 
 provider "aws" {
-  region                  = "ap-southeast-1"
-  shared_credentials_file = "/Users/jiajun/.aws/credentials"
+  region                  = "ap-northeast-1"
+  shared_credentials_file = "/Users/toshiaizawa/.aws/credentials"
 }
 
 variable "bucket_name" {
   type    = string
-  default = "jj-terraform-s3-goof-bucket"
+  default = "toshi-terraform-s3-goof-bucket"
 }
 
 variable "s3_acl" {
@@ -22,7 +22,7 @@ variable "s3_acl" {
   default = "public-read-write"
 }
 
-resource "aws_s3_bucket" "jj-s3-bucket-iac-demo" {
+resource "aws_s3_bucket" "toshi-s3-bucket-iac-demo" {
   bucket = var.bucket_name
   acl    = var.s3_acl
 }
